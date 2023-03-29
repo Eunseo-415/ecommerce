@@ -1,1 +1,3 @@
 rootProject.name = 'ecommerce'
+include("user-api")
+include("order-api")
