@@ -2,7 +2,7 @@ package com.example.userapi.config.filter;
 
 import com.example.domain.config.JwtAuthenticationProvider;
 import com.example.domain.domain.common.UserVo;
-import com.example.userapi.service.CustomerService;
+import com.example.userapi.service.customer.CustomerService;
 import lombok.RequiredArgsConstructor;
 
 import javax.servlet.*;

@@ -1,8 +1,6 @@
-package com.example.userapi.service;
+package com.example.userapi.service.customer;
 
 import com.example.userapi.domain.model.Customer;
-import com.example.userapi.exception.CustomException;
-import com.example.userapi.exception.ErrorCode;
 import com.example.userapi.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
