@@ -1,4 +1,4 @@
-package com.example.userapi.service;
+package com.example.userapi.service.customer;
 
 import com.example.userapi.domain.SignupForm;
 import com.example.userapi.domain.model.Customer;
@@ -6,7 +6,6 @@ import com.example.userapi.exception.CustomException;
 import com.example.userapi.exception.ErrorCode;
 import com.example.userapi.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
-import net.bytebuddy.asm.Advice;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
