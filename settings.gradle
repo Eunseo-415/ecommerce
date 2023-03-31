@@ -1,3 +1,4 @@
 rootProject.name = 'ecommerce'
-include("user-api")
-include("order-api")
+include 'user-api'
+include 'order-api'
+include 'domain'
