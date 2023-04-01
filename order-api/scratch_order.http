@@ -1,0 +1,28 @@
+### 상품 추가
+POST http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKTm1MaW1aK0xXSFJhcDBlNW8wVThHRGpMVk1JSFR4YWlvTGFtTEJ4YWpNPSIsImp0aSI6IkxaTDdacHN1elZWQUVieGVlMlQzalE9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgwMzg0MDIyLCJleHAiOjE2ODA0NzA0MjJ9.UiRnaV8eob0ATzQ4RQ_H5eBDi-uRrznEl2K4gKyAzA8
+
+{
+  "description" : "상품 설명",
+  "items" : [
+    {
+      "count" : 1,
+      "name" : "상품 아이템",
+      "price" : 10000
+    }
+  ],
+  "name" : "에어팟 맥스"
+}
+
+### 상품 아이템 추가
+POST http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKTm1MaW1aK0xXSFJhcDBlNW8wVThHRGpMVk1JSFR4YWlvTGFtTEJ4YWpNPSIsImp0aSI6IkxaTDdacHN1elZWQUVieGVlMlQzalE9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgwMzg0MDIyLCJleHAiOjE2ODA0NzA0MjJ9.UiRnaV8eob0ATzQ4RQ_H5eBDi-uRrznEl2K4gKyAzA8
+
+{
+  "productId" : 1,
+  "count" : 1,
+  "name" : "상품 아이템1",
+  "price" : 10000
+}
