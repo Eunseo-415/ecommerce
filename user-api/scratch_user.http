@@ -60,3 +60,4 @@ Content-Type: application/json
 
 ### 이메일 인증 (셀러)
 GET http://localhost:8081/signup/seller/verify?email=eumseo@icloud.com&code=uzPH6V4oem
+
