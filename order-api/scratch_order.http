@@ -71,3 +71,23 @@ GET http://localhost:8082/search/product?name=에어팟
 
 ### 상품 디테일 검색
 GET http://localhost:8082/search/product/detail?productId=1
+
+### 장바구니에 상품 추가
+POST http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKTm1MaW1aK0xXSFJhcDBlNW8wVThHRGpMVk1JSFR4YWlvTGFtTEJ4YWpNPSIsImp0aSI6IkxaTDdacHN1elZWQUVieGVlMlQzalE9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgwMzg0MDIyLCJleHAiOjE2ODA0NzA0MjJ9.UiRnaV8eob0ATzQ4RQ_H5eBDi-uRrznEl2K4gKyAzA8
+
+{
+  "description" : "상품 설명",
+  "id" : 1,
+  "items" : [
+    {
+      "count" : 1,
+      "id" : 1,
+      "name" : "상품 아이템",
+      "price" : 10000
+    }
+  ],
+  "name" : "에어팟 맥스+",
+  "sellerId" : 1
+}
