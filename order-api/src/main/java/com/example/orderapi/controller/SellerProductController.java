@@ -1,4 +1,4 @@
-package com.example.orderapi;
+package com.example.orderapi.controller;
 
 import com.example.domain.config.JwtAuthenticationProvider;
 import com.example.orderapi.domain.product.*;

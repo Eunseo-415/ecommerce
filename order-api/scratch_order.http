@@ -12,7 +12,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKTm1MaW1aK0xXSFJhcDBlNW8wVThHRGpMV
       "price" : 10000
     }
   ],
-  "name" : "에어팟 맥스"
+  "name" : "에어팟 맥스+"
 }
 
 ### 상품 아이템 추가
@@ -58,12 +58,16 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKTm1MaW1aK0xXSFJhcDBlNW8wVThHRGpMV
   "price" : 10000
 }
 
-#### 상품 삭제
+### 상품 삭제
 DELETE http://localhost:8082/seller/product?id=2
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKTm1MaW1aK0xXSFJhcDBlNW8wVThHRGpMVk1JSFR4YWlvTGFtTEJ4YWpNPSIsImp0aSI6IkxaTDdacHN1elZWQUVieGVlMlQzalE9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgwMzg0MDIyLCJleHAiOjE2ODA0NzA0MjJ9.UiRnaV8eob0ATzQ4RQ_H5eBDi-uRrznEl2K4gKyAzA8
 
-#### 상품 아이템 삭제
+### 상품 아이템 삭제
 DELETE http://localhost:8082/seller/product/item?id=3
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKTm1MaW1aK0xXSFJhcDBlNW8wVThHRGpMVk1JSFR4YWlvTGFtTEJ4YWpNPSIsImp0aSI6IkxaTDdacHN1elZWQUVieGVlMlQzalE9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjgwMzg0MDIyLCJleHAiOjE2ODA0NzA0MjJ9.UiRnaV8eob0ATzQ4RQ_H5eBDi-uRrznEl2K4gKyAzA8
 
+### 상품 검색
+GET http://localhost:8082/search/product?name=에어팟
 
+### 상품 디테일 검색
+GET http://localhost:8082/search/product/detail?productId=1
