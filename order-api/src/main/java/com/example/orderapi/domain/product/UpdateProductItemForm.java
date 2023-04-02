@@ -5,15 +5,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
-//builder no,all argsconstructor 은 테스트 용 -> mocking 사용시 필요 없음
 @Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddProductForm {
+public class UpdateProductItemForm {
+    private Long id;
     private String name;
-    private String description;
-    private List<AddProductItemForm> items;
+    private Integer price;
+    private Integer count;
 }
