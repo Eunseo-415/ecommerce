@@ -19,21 +19,21 @@ Content-Type: application/json
 }
 
 ### 이메일 인증 (고객)
-GET http://localhost:8081/signup/customer/verify?email=eumseo@icloud.com&code=BcrPjUYL9v
+GET http://localhost:8081/signup/customer/verify?email=eumseo@icloud.com&code=eCdgfS0DsI
 
 ### 회원 정보 조회 (고객)
 GET http://localhost:8081/customer/getInfo
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKTm1MaW1aK0xXSFJhcDBlNW8wVThHRGpMVk1JSFR4YWlvTGFtTEJ4YWpNPSIsImp0aSI6IkxaTDdacHN1elZWQUVieGVlMlQzalE9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODAzMDAwNDksImV4cCI6MTY4MDM4NjQ0OX0.gOVDgI8h1PpFZ4HzgqqXRd-dC0EfxTuutdCWIc3OiwI
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKTm1MaW1aK0xXSFJhcDBlNW8wVThHRGpMVk1JSFR4YWlvTGFtTEJ4YWpNPSIsImp0aSI6IkxaTDdacHN1elZWQUVieGVlMlQzalE9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODA1MTE5MTMsImV4cCI6MTY4MDU5ODMxM30.udJ7qWR_gjeJjlDx21NLjmXIDKtLiSGV32Xbmcdl5x8
 
 ### 잔액 변경 (고객)
 POST http://localhost:8081/customer/balance
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKTm1MaW1aK0xXSFJhcDBlNW8wVThHRGpMVk1JSFR4YWlvTGFtTEJ4YWpNPSIsImp0aSI6IkxaTDdacHN1elZWQUVieGVlMlQzalE9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODAzMDAwNDksImV4cCI6MTY4MDM4NjQ0OX0.gOVDgI8h1PpFZ4HzgqqXRd-dC0EfxTuutdCWIc3OiwI
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKTm1MaW1aK0xXSFJhcDBlNW8wVThHRGpMVk1JSFR4YWlvTGFtTEJ4YWpNPSIsImp0aSI6IkxaTDdacHN1elZWQUVieGVlMlQzalE9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODA1MTE5MTMsImV4cCI6MTY4MDU5ODMxM30.udJ7qWR_gjeJjlDx21NLjmXIDKtLiSGV32Xbmcdl5x8
 Content-Type: application/json
 
 {
-    "from" : "admin",
+    "from" : "server",
     "message" : "+points",
-    "money" : -1000
+    "money" : 100000
 }
 
 ####################
@@ -44,7 +44,7 @@ Content-Type: application/json
 
 {
   "birth":"2022-03-26",
-  "email" : "eumseo@icloud.com",
+  "email" : "ieunseo415@gmail.com",
   "name" : "Test",
   "password" : "1234",
   "phone" : "01000000000"
@@ -54,10 +54,9 @@ POST http://localhost:8081/signIn/seller
 Content-Type: application/json
 
 {
-    "email": "eumseo@icloud.com",
+    "email": "ieunseo415@gmail.com",
     "password" : "1234"
 }
 
 ### 이메일 인증 (셀러)
-GET http://localhost:8081/signup/seller/verify?email=eumseo@icloud.com&code=uzPH6V4oem
-
+GET http://localhost:8081/signup/seller/verify?email=ieunseo415@gmail.com&code=mBaYen89jx
