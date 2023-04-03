@@ -31,7 +31,7 @@ public class CartApplication {
 
         Cart cart = cartService.getCart(customerId);
 
-        if (cart != null && !addAble(cart, product, form)){
+        if (!addAble(cart, product, form)){
             throw new CustomException(ErrorCode.ITEM_COUNT_NOT_ENOUGH);
         }
         return cartService.addCart(customerId, form);
@@ -45,16 +45,22 @@ public class CartApplication {
 
     public Cart getCart(Long customerId){
         Cart cart = refreshCart(cartService.getCart(customerId));
+        cartService.putCart(cart.getCustomerId(), cart);
+
         Cart returnCart = new Cart();
+
         returnCart.setCustomerId(customerId);
         returnCart.setProducts(cart.getProducts());
         returnCart.setMessages(cart.getMessages());
+
         cart.setMessages(new ArrayList<>());
+
         cartService.putCart(customerId, cart);
+
         return returnCart;
     }
 
-    private Cart refreshCart(Cart cart){
+    protected Cart refreshCart(Cart cart){
         Map<Long, Product> productMap = productSearchService.getListByProductIds(
                 cart.getProducts().stream().map(Cart.Product::getId).collect(Collectors.toList()))
                 .stream()
@@ -73,12 +79,13 @@ public class CartApplication {
             }
 
             Map<Long, ProductItem> productItemMap = p.getProductItems().stream()
-                    .collect(Collectors.toMap(ProductItem::getId, product -> product));
+                    .collect(Collectors.toMap(ProductItem::getId, productItem -> productItem));
 
             List<String> tmpMessages = new ArrayList<>();
             for (int j = 0; j < cartProduct.getItems().size(); j++){
                 Cart.ProductItem cartProductItem = cartProduct.getItems().get(j);
                 ProductItem pi = productItemMap.get(cartProductItem.getId());
+
                 if (pi == null){
                     cartProduct.getItems().remove(cartProductItem);
                     j--;
@@ -98,9 +105,9 @@ public class CartApplication {
 
                 if (isCountNotEnough && isPriceChanged){
                     tmpMessages.add(cartProductItem.getName() + " 가격과 수량이 변경되었습니다.");
-                } else if (isCountNotEnough){
+                } else if (isPriceChanged){
                     tmpMessages.add(cartProductItem.getName() + " 가격이 변경되었습니다.");
-                } else {
+                } else if (isCountNotEnough){
                     tmpMessages.add(cartProductItem.getName() + " 수량이 변경되었습니다.");
                 }
             }
@@ -108,6 +115,7 @@ public class CartApplication {
                 cart.getProducts().remove(cartProduct);
                 i--;
                 cart.addMessage(cartProduct.getName()+" 상품의 옵션이 모두 없어져 구매가 불가능합니다.");
+                continue;
             } else if (tmpMessages.size() > 0) {
                 StringBuilder builder = new StringBuilder();
                 builder.append(cartProduct.getName()+" 상품의 변동 사항: ");
@@ -118,7 +126,6 @@ public class CartApplication {
                 cart.addMessage(builder.toString());
             }
         }
-        cartService.putCart(cart.getCustomerId(), cart);
         return cart;
     }
 
